@@ -16,7 +16,7 @@ The tree and node class documentation can be viewed [here](https://themikshacker
 
 # Installation
 
-To install, you can type in the terminal `npm install treewithpath`. After that, include the Tree in the desired file using `const Tree = require("TreeWithPath");`.
+To install, you can type in the terminal `npm install treewithpath`. After that, include the Tree in the desired file using `const Tree = require("treewithpath");`.
 Well, how to use Tree can be found in the documentation (see above).
 
 ## Русская версия Readme
@@ -37,5 +37,5 @@ Well, how to use Tree can be found in the documentation (see above).
 
 # Установка
 
-Чтобы установить Вы можете набрать в терминал `npm install treewithpath`. После этого подключите Tree в нужном файле используя `const Tree = require("TreeWithPath");`.
+Чтобы установить Вы можете набрать в терминал `npm install treewithpath`. После этого подключите Tree в нужном файле используя `const Tree = require("treewithpath");`.
 Ну а об том как использовать Tree Вы можете найти в документации (смотрите выше).
