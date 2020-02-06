@@ -1,6 +1,6 @@
 {
   "name": "treewithpath",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JavaScript library for working with trees. The main difference from other libraries is that here access to nodes occurs through paths, paths similar to paths in the FS. / Библиотека JavaScript для работы с деревьями. Основное отличие от других библиотек, в том что тут доступ к узлам происходит через пути, пути похожие на пути в ФС.",
   "main": "treewithpath.js",
   "scripts": {
