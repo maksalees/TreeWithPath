@@ -233,7 +233,7 @@ class Node
     {
         if (this.tree == null)
         {
-            throw new TreeError("This node does not belong to any tree / Данный узел не принадлежит никакому дереву")
+            throw new TreeError("This node does not belong to any tree / Данный узел не принадлежит никакому дереву");
         }
 
         let parentsArray = [];
@@ -266,7 +266,7 @@ class Node
     {
         if (this.tree == null)
         {
-            throw new TreeError("This node does not belong to any tree / Данный узел не принадлежит никакому дереву")
+            throw new TreeError("This node does not belong to any tree / Данный узел не принадлежит никакому дереву");
         }
 
         if (this.tree.root._children.includes(this))
@@ -304,7 +304,7 @@ class Node
     {
         if (this.tree == null)
         {
-            throw new TreeError("This node does not belong to any tree / Данный узел не принадлежит никакому дереву")
+            throw new TreeError("This node does not belong to any tree / Данный узел не принадлежит никакому дереву");
         }
 
         if (this.parent == null)
