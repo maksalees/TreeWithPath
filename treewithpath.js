@@ -33,7 +33,7 @@ class Tree
     {
         if (this.has(Tree.joinPath(path, name)))
         {
-            throw new TreeError('This node already exists. / Данный узел уже существует.')
+            throw new TreeError('This node already exists. / Данный узел уже существует.');
         }
 
         let node = new Node(name, data, this);
@@ -337,7 +337,7 @@ class Node
 
         if (this.tree.has(Tree.joinPath(this.path, name)))
         {
-            throw new TreeError('This node already exists. / Данный узел уже существует.')
+            throw new TreeError('This node already exists. / Данный узел уже существует.');
         }
 
         let node = new Node(name, data, this.tree);
