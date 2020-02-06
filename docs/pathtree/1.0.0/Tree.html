@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+      Tree - Documentation
+  </title>
+
+  <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+  <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+  
+  <link type="text/css" rel="stylesheet" href="styles/collapse.css">
+  
+
+  
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+  0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+  mixpanel.init("1919205b2da72e4da3b9b6639b444d59");</script>
+  <!-- end Mixpanel -->
+</head>
+
+<body>
+  <svg style="display: none;">
+    <defs>
+      <symbol id="linkIcon" fill="#706d77" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="navicon-button x">
+    <div class="navicon"></div>
+  </label>
+
+  <label for="nav-trigger" class="overlay"></label>
+
+  <div class="top-nav-wrapper">
+    <ul>
+      <li >
+        <a href="index.html">
+          
+            <svg fill="#6D6D6D" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          
+          
+        </a>
+      </li>
+
+      
+
+    </ul>
+  </div>
+
+  <nav>
+    <h3 class="reference-title">
+      PathTree
+    </h3>
+
+    
+      <h3>
+        Resources
+      </h3>
+      
+        <a href="https://npmjs.com/packages/pathtree">npm</a>
+      
+        <a href="https://github.com/TheMiksHacker/PathTree">GitHub</a>
+      
+    
+
+    <h3>Classes</h3><ul><li id="Node-nav"><a href="Node.html">Node</a><ul class='methods'><li data-type="method" id="Node-addChild-nav"><a href="Node.html#addChild">addChild</a></li><li data-type="method" id="Node-remove-nav"><a href="Node.html#remove">remove</a></li><li data-type="method" id="Node-toJSON-nav"><a href="Node.html#toJSON">toJSON</a></li></ul></li><li id="Tree-nav"><a href="Tree.html">Tree</a><ul class='methods'><li data-type="method" id="Tree-fromJSON-nav"><a href="Tree.html#.fromJSON">fromJSON</a></li><li data-type="method" id="Tree-joinPath-nav"><a href="Tree.html#.joinPath">joinPath</a></li><li data-type="method" id="Tree-add-nav"><a href="Tree.html#add">add</a></li><li data-type="method" id="Tree-get-nav"><a href="Tree.html#get">get</a></li><li data-type="method" id="Tree-has-nav"><a href="Tree.html#has">has</a></li><li data-type="method" id="Tree-isUniqueName-nav"><a href="Tree.html#isUniqueName">isUniqueName</a></li><li data-type="method" id="Tree-remove-nav"><a href="Tree.html#remove">remove</a></li><li data-type="method" id="Tree-toJSON-nav"><a href="Tree.html#toJSON">toJSON</a></li><li data-type="method" id="Tree-traverse-nav"><a href="Tree.html#traverse">traverse</a></li></ul></li></ul>
+  </nav>
+
+  <div id="main">
+    
+      <h1 class="page-title">
+        Tree
+      </h1>
+    
+
+    
+
+<section>
+  <header>
+    
+      <h2>
+        
+        Tree
+        
+      </h2>
+
+      
+        <div class="class-description">
+          <p>The class of the PathTree tree. / Класс дерева PathTree.</p>
+        </div>
+      
+    
+  </header>
+
+  <article>
+    <div class="container-overview">
+      
+        
+
+
+  
+    <h2>Constructor</h2>
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#Tree">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="Tree">
+      <span class="type-signature"></span>new Tree<span class="signature">(data)</span><span class="type-signature"></span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Creates a tree. / Создает дерево.</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>data</code></td>
+        
+
+        <td class="type">
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Tree root node data. The name of the root node is always root. / Данные корневого узла дерева. Имя корневого узла всегда root.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line15">line 15</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#Tree-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="Tree-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>const Tree = require("pathtree");
+let tree = new Tree({text: "Hello, world!", "otherText": "hoI!"});</code></pre>
+
+
+  </div>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+      <h3 class="subsection-title">Methods</h3>
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.fromJSON">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".fromJSON">
+      <span class="type-signature">(static) </span>fromJSON<span class="signature">(json)</span><span class="type-signature"> &rarr; {<a href="Tree.html">Tree</a>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Creates a tree from an object that returns the toJSON() method. / Создает дерево из объекта который возвращает метод toJSON().</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>json</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      object
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>A tree object suitable for storage in JSON format. / Объект дерева пригодный для хранения в формате JSON.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line185">line 185</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#fromJSON-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="fromJSON-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>let tree = Tree.fromJSON({name: "root", data: {text: "Hello, world!", "otherText": "hoI!"}, children: [{name: "node1", data: {text: "Hello, world!", "otherText": "hoI!"}, children: [{name: "node2", data: {text: "Hello, world!", "otherText": "hoI!"}, children: []}]});</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#.joinPath">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id=".joinPath">
+      <span class="type-signature">(static) </span>joinPath<span class="signature">(pathOne, pathTwo)</span><span class="type-signature"> &rarr; {string}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Connects the two specified paths into one. / Соединяет два указанных путя в один.</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>pathOne</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>First path. / Первый путь.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>pathTwo</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      sting
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>Second path. / Второй путь.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line210">line 210</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#joinPath-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="joinPath-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>Tree.joinPath('/gg', 'gg') // /gg/gg</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#add">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="add">
+      <span class="type-signature"></span>add<span class="signature">(name, data, path)</span><span class="type-signature"> &rarr; {<a href="Node.html">Node</a>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Adds a node to the tree and returns it. / Добавляет узел к дереву и возвращает его.</p>
+  </div>
+
+
+
+
+
+  <h5>This:</h5>
+  <ul>
+    <li>
+      {<a href="Tree.html">Tree</a>}
+    </li>
+  </ul>
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>name</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The name of the node to add. / Имя добавляемого узла.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>data</code></td>
+        
+
+        <td class="type">
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The data of the node to be created. / Данные создаваемого узла.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path to the parent of the node to create. / Путь к родителю создаваемого узла.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line32">line 32</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <dl>
+    <dt>
+      <div class="param-desc">
+        <p>In case the node already exists. / В случае если узел уже существует.</p>
+      </div>
+    </dt>
+    <dd></dd>
+    <dt>
+      <dl>
+        <dt>Type</dt>
+        <dd>
+          
+    <span class="param-type">
+      TreeError
+    </span>
+
+    
+
+
+        </dd>
+      </dl>
+    </dt>
+    <dd></dd>
+  </dl>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#add-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="add-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>tree.add("node2", {text: "Hello, world!", "otherText": "hoI!"}, "/node1");</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#get">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="get">
+      <span class="type-signature"></span>get<span class="signature">(path, error)</span><span class="type-signature"> &rarr; {<a href="Node.html">Node</a>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Gets the node at the specified path. / Получает узел по пути.</p>
+  </div>
+
+
+
+
+
+  <h5>This:</h5>
+  <ul>
+    <li>
+      {<a href="Tree.html">Tree</a>}
+    </li>
+  </ul>
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+        <th>Default</th>
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+          <td class="default">
+            
+          </td>
+        
+
+        <td class="description last">
+          <p>The path to the node to receive. / Путь к получаемому узлу.</p>
+          
+        </td>
+      </tr>
+
+    
+      <tr>
+        
+          <td class="name"><code>error</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      boolean
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+          <td class="default">
+            
+              true
+            
+          </td>
+        
+
+        <td class="description last">
+          <p>Optional parameter. The default is true. If true, an exception will be thrown if the path is incorrect. Otherwise, null will be returned. / Не обязательный параметр. По умолчанию true. Если верен то при неверном пути будет вызвано исключение. Иначе будет возвращен null.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line55">line 55</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <dl>
+    <dt>
+      <div class="param-desc">
+        <p>In case the node is not found and error = true. / В случае если узел не найден и error = true.</p>
+      </div>
+    </dt>
+    <dd></dd>
+    <dt>
+      <dl>
+        <dt>Type</dt>
+        <dd>
+          
+    <span class="param-type">
+      TreeError
+    </span>
+
+    
+
+
+        </dd>
+      </dl>
+    </dt>
+    <dd></dd>
+  </dl>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#get-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="get-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>tree.get("/node1");</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#has">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="has">
+      <span class="type-signature"></span>has<span class="signature">(path)</span><span class="type-signature"> &rarr; {boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Checks a node for existence in a tree. / Проверяет узел на существование в дереве.</p>
+  </div>
+
+
+
+
+
+  <h5>This:</h5>
+  <ul>
+    <li>
+      {<a href="Tree.html">Tree</a>}
+    </li>
+  </ul>
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path to the node to check. / Путь к узлу для проверки.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line149">line 149</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#has-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="has-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>tree.has('/notExists/child') // false
+tree.has('/exists') // true</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#isUniqueName">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="isUniqueName">
+      <span class="type-signature"></span>isUniqueName<span class="signature">(path)</span><span class="type-signature"> &rarr; {boolean}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Checks a node for existence in a tree. / Проверяет узел на существование в дереве.</p>
+  </div>
+
+
+
+
+
+  <h5>This:</h5>
+  <ul>
+    <li>
+      {<a href="Tree.html">Tree</a>}
+    </li>
+  </ul>
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path to the node to check. / Путь к узлу для проверки.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line165">line 165</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#isUniqueName-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="isUniqueName-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>tree.has('/notExists/child') // false
+tree.has('/exists') // true</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#remove">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="remove">
+      <span class="type-signature"></span>remove<span class="signature">(path)</span><span class="type-signature"> &rarr; {<a href="Node.html">Node</a>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Deletes the node and returns it at the specified path. / Удаляет узел и возвращает его по указанному пути.</p>
+  </div>
+
+
+
+
+
+  <h5>This:</h5>
+  <ul>
+    <li>
+      {<a href="Tree.html">Tree</a>}
+    </li>
+  </ul>
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>path</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      string
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>The path to the node to be deleted. / Путь к удаляемому узлу.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line95">line 95</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h5>Throws:</h5>
+  
+      
+
+  <dl>
+    <dt>
+      <div class="param-desc">
+        <p>In case the node is not found. / В случае если узел не найден.</p>
+      </div>
+    </dt>
+    <dd></dd>
+    <dt>
+      <dl>
+        <dt>Type</dt>
+        <dd>
+          
+    <span class="param-type">
+      TreeError
+    </span>
+
+    
+
+
+        </dd>
+      </dl>
+    </dt>
+    <dd></dd>
+  </dl>
+
+
+    
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#remove-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="remove-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>tree.remove("/node1");</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#toJSON">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="toJSON">
+      <span class="type-signature"></span>toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Returns a tree object suitable for storage in JSON format. This method is mainly used by the JSON.stringify function. / Возвращает пригодный для хранения в формате JSON объект дерева. В основном данный метод используется функцией JSON.stringify.</p>
+  </div>
+
+
+
+
+
+  <h5>This:</h5>
+  <ul>
+    <li>
+      {<a href="Tree.html">Tree</a>}
+    </li>
+  </ul>
+
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line134">line 134</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#toJSON-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="toJSON-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>tree.toJSON(); // {name: "root", data: {text: "Hello, world!", "otherText": "hoI!"}, children: [{name: "node1", data: {text: "Hello, world!", "otherText": "hoI!"}, children: [{name: "node2", data: {text: "Hello, world!", "otherText": "hoI!"}, children: []}]}</code></pre>
+
+
+  </div>
+
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#traverse">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="traverse">
+      <span class="type-signature"></span>traverse<span class="signature">(callback)</span><span class="type-signature"></span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Calls a callback for each node in the tree. / Вызывает callback для каждого узла дерева.</p>
+  </div>
+
+
+
+
+
+  <h5>This:</h5>
+  <ul>
+    <li>
+      {<a href="Tree.html">Tree</a>}
+    </li>
+  </ul>
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<table class="params">
+  <thead>
+    <tr>
+      
+        <th>Name</th>
+      
+
+      <th>Type</th>
+
+      
+
+      
+
+      <th class="last">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        
+          <td class="name"><code>callback</code></td>
+        
+
+        <td class="type">
+          
+            
+    <span class="param-type">
+      function
+    </span>
+
+    
+
+
+          
+        </td>
+
+        
+
+        
+
+        <td class="description last">
+          <p>A function called for each node of the tree. The node in the first argument is passed to the function. / Функция вызываемая для каждого узла дерева. Функции передается узел в первом аргументе.</p>
+          
+        </td>
+      </tr>
+
+    
+  </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="pathtree.js.html">pathtree.js</a>, <a href="pathtree.js.html#line112">line 112</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="example-container">
+    <a class="link-icon" href="#traverse-examples">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h5 id="traverse-examples">Example</h5>
+    
+
+  <pre class="prettyprint"><code>tree.traverse(node => {
+  console.log(node.name);
+});</code></pre>
+
+
+  </div>
+
+
+      
+    
+
+    
+
+    
+  </article>
+</section>
+
+
+
+
+  </div>
+
+  <br class="clear">
+
+  <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a>
+  </footer>
+
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/pagelocation.js"></script>
+
+  
+
+</body>
+</html>
