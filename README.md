@@ -12,7 +12,7 @@ The path in PathTree is very similar to the path in Unix. Each tree has its own 
 
 # Documentation
 
-The tree and node class documentation can be viewed [here](https://themikshacker.github.io/pathtree/Tree.html) and [here](https://themikshacker.github.io/pathtree/Node.html).
+The tree and node class documentation can be viewed [here](https://themikshacker.github.io/PathTree/Tree.html) and [here](https://themikshacker.github.io/PathTree/Node.html).
 
 # Installation
 
@@ -33,7 +33,7 @@ Well, how to use PathTree can be found in the documentation (see above).
 
 # Документация
 
-Документацию по классу дерева и узла можно посмотреть [тут](https://themikshacker.github.io/pathtree/Tree.html) и [тут](https://themikshacker.github.io/pathtree/Node.html).
+Документацию по классу дерева и узла можно посмотреть [тут](https://themikshacker.github.io/PathTree/Tree.html) и [тут](https://themikshacker.github.io/PathTree/Node.html).
 
 # Установка
 
