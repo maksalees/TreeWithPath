@@ -70,7 +70,7 @@
 
   <nav>
     <h3 class="reference-title">
-      PathTree
+      TreeWithPath
     </h3>
 
     
@@ -78,9 +78,9 @@
         Resources
       </h3>
       
-        <a href="https://npmjs.com/packages/pathtree">npm</a>
+        <a href="https://npmjs.com/packages/treewithpath">npm</a>
       
-        <a href="https://github.com/TheMiksHacker/PathTree">GitHub</a>
+        <a href="https://github.com/TheMiksHacker/TreeWithPath">GitHub</a>
       
     
 
@@ -103,28 +103,28 @@
   <section class="readme">
     <article>
       <h2>English version of Readme</h2>
-<p>WARNING! All documentation and this Readme have been translated into English using Google Translate. If you find a mistake in the translation, send a Pull Request to <a href="https://github.com/TheMiksHacker/PathTree">GitHub</a>.</p>
-<h1>PathTree</h1>
+<p>WARNING! All documentation and this Readme have been translated into English using Google Translate. If you find a mistake in the translation, send a Pull Request to <a href="https://github.com/TheMiksHacker/TreeWithPath">GitHub</a>.</p>
+<h1>TreeWithPath</h1>
 <p>JavaScript library for working with trees. The main difference from other libraries is that here access to nodes occurs through paths, paths similar to paths in the FS.</p>
 <h1>Paths</h1>
-<p>The path in PathTree is very similar to the path in Unix. Each tree has its own root. It is indicated in the paths as <code>/</code>. Each node also has its own name. The name may be the same if the nodes have different parents. If you try to create a node and this parent already has a node with that name, then there will be an error. It is set at creation. It is like a file name, it is used in paths. For example, create a node <code>node1</code> which is a child of the root node (it is called <code>root</code>). And the path to the created node will be <code>/node1</code>. Now let's create a child for <code>node1</code>, and name it <code>node2</code>. The path to it will be <code>/node1/node2</code>. This way you can create many nodes. Now let's move on to working with the library itself.</p>
+<p>The path in Tree is very similar to the path in Unix. Each tree has its own root. It is indicated in the paths as <code>/</code>. Each node also has its own name. The name may be the same if the nodes have different parents. If you try to create a node and this parent already has a node with that name, then there will be an error. It is set at creation. It is like a file name, it is used in paths. For example, create a node <code>node1</code> which is a child of the root node (it is called <code>root</code>). And the path to the created node will be <code>/node1</code>. Now let's create a child for <code>node1</code>, and name it <code>node2</code>. The path to it will be <code>/node1/node2</code>. This way you can create many nodes. Now let's move on to working with the library itself.</p>
 <h1>Documentation</h1>
-<p>The tree and node class documentation can be viewed <a href="https://themikshacker.github.io/PathTree/Tree.html">here</a> and <a href="https://themikshacker.github.io/PathTree/Node.html">here</a>.</p>
+<p>The tree and node class documentation can be viewed <a href="https://themikshacker.github.io/TreeWithPath/Tree.html">here</a> and <a href="https://themikshacker.github.io/TreeWithPath/Node.html">here</a>.</p>
 <h1>Installation</h1>
-<p>To install, you can type in the terminal <code>npm install pathtree</code>. After that, include the PathTree in the desired file using <code>const Tree = require(&quot;pathtree&quot;);</code>.
-Well, how to use PathTree can be found in the documentation (see above).</p>
+<p>To install, you can type in the terminal <code>npm install treewithpath</code>. After that, include the Tree in the desired file using <code>const Tree = require(&quot;TreeWithPath&quot;);</code>.
+Well, how to use Tree can be found in the documentation (see above).</p>
 <h2>Русская версия Readme</h2>
-<h1>PathTree</h1>
+<h1>TreeWithPath</h1>
 <p>Библиотека JavaScript для работы с деревьями. Основное отличие от других библиотек, в том что тут доступ к узлам происходит через пути, пути похожие на пути в ФС.</p>
 <h1>Пути</h1>
-<p>Путь в PathTree очень похож на пути в ОС Unix. У каждого дерева есть свой корень. Он в путях обозначается <code>/</code>. Также у каждого узла есть свое имя. Имя может быть одинаковое если узлы имееют разных родителей. Если попытатся создать узел а у этого родителя уже есть узел с таким именем то будет ошибка.
+<p>Путь в Tree очень похож на пути в ОС Unix. У каждого дерева есть свой корень. Он в путях обозначается <code>/</code>. Также у каждого узла есть свое имя. Имя может быть одинаковое если узлы имееют разных родителей. Если попытатся создать узел а у этого родителя уже есть узел с таким именем то будет ошибка.
 Оно задается при создании. Это как имя файла, оно используется в путях. Например создадим узел <code>node1</code> который является ребенком корневого узла (он называется <code>root</code>).
 И путь к созданному узлу будет <code>/node1</code>. А теперь давайте создамим ребенка для <code>node1</code>, и назовем его <code>node2</code>. Путь к нему получится <code>/node1/node2</code>. Таким образом можно создавать много узлов. Теперь перейдем к работе с самой библиотекой.</p>
 <h1>Документация</h1>
-<p>Документацию по классу дерева и узла можно посмотреть <a href="https://themikshacker.github.io/PathTree/Tree.html">тут</a> и <a href="https://themikshacker.github.io/PathTree/Node.html">тут</a>.</p>
+<p>Документацию по классу дерева и узла можно посмотреть <a href="https://themikshacker.github.io/TreeWithPath/Tree.html">тут</a> и <a href="https://themikshacker.github.io/TreeWithPath/Node.html">тут</a>.</p>
 <h1>Установка</h1>
-<p>Чтобы установить Вы можете набрать в терминал <code>npm install pathtree</code>. После этого подключите PathTree в нужном файле используя <code>const Tree = require(&quot;pathtree&quot;);</code>.
-Ну а об том как использовать PathTree Вы можете найти в документации (смотрите выше).</p>
+<p>Чтобы установить Вы можете набрать в терминал <code>npm install treewithpath</code>. После этого подключите Tree в нужном файле используя <code>const Tree = require(&quot;TreeWithPath&quot;);</code>.
+Ну а об том как использовать Tree Вы можете найти в документации (смотрите выше).</p>
     </article>
   </section>
 
