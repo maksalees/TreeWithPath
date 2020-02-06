@@ -153,28 +153,6 @@ class Tree
     }
 
     /**
-        * Checks a node for existence in a tree. / Проверяет узел на существование в дереве.
-        * 
-        * @param {string} path The path to the node to check. / Путь к узлу для проверки.
-        * @returns {boolean} True if the node exists and false if it does not exist. / Значение true в случае существования узла и false в случае если он не существует.
-        * @this {Tree} Tree. / Дерево.
-        * @example
-        * tree.has('/notExists/child') // false
-        * tree.has('/exists') // true
-    */
-    isUniqueName(name)
-    {
-        let isUnique = true;
-        tree.traverse(node => {
-            if (node.name == name)
-            {
-                isUnique = false;
-            }
-        });
-        return isUnique;
-    }
-
-    /**
         * Creates a tree from an object that returns the toJSON() method. / Создает дерево из объекта который возвращает метод toJSON().
         *
         * @param {object} json A tree object suitable for storage in JSON format. / Объект дерева пригодный для хранения в формате JSON.

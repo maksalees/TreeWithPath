@@ -86,7 +86,7 @@
       
     
 
-    <h3>Classes</h3><ul><li id="Node-nav"><a href="Node.html">Node</a><ul class='methods'><li data-type="method" id="Node-addChild-nav"><a href="Node.html#addChild">addChild</a></li><li data-type="method" id="Node-remove-nav"><a href="Node.html#remove">remove</a></li><li data-type="method" id="Node-toJSON-nav"><a href="Node.html#toJSON">toJSON</a></li></ul></li><li id="Tree-nav"><a href="Tree.html">Tree</a><ul class='methods'><li data-type="method" id="Tree-fromJSON-nav"><a href="Tree.html#.fromJSON">fromJSON</a></li><li data-type="method" id="Tree-joinPath-nav"><a href="Tree.html#.joinPath">joinPath</a></li><li data-type="method" id="Tree-add-nav"><a href="Tree.html#add">add</a></li><li data-type="method" id="Tree-get-nav"><a href="Tree.html#get">get</a></li><li data-type="method" id="Tree-has-nav"><a href="Tree.html#has">has</a></li><li data-type="method" id="Tree-isUniqueName-nav"><a href="Tree.html#isUniqueName">isUniqueName</a></li><li data-type="method" id="Tree-remove-nav"><a href="Tree.html#remove">remove</a></li><li data-type="method" id="Tree-toJSON-nav"><a href="Tree.html#toJSON">toJSON</a></li><li data-type="method" id="Tree-traverse-nav"><a href="Tree.html#traverse">traverse</a></li></ul></li></ul>
+    <h3>Classes</h3><ul><li id="Node-nav"><a href="Node.html">Node</a><ul class='methods'><li data-type="method" id="Node-addChild-nav"><a href="Node.html#addChild">addChild</a></li><li data-type="method" id="Node-remove-nav"><a href="Node.html#remove">remove</a></li><li data-type="method" id="Node-toJSON-nav"><a href="Node.html#toJSON">toJSON</a></li></ul></li><li id="Tree-nav"><a href="Tree.html">Tree</a><ul class='methods'><li data-type="method" id="Tree-fromJSON-nav"><a href="Tree.html#.fromJSON">fromJSON</a></li><li data-type="method" id="Tree-joinPath-nav"><a href="Tree.html#.joinPath">joinPath</a></li><li data-type="method" id="Tree-add-nav"><a href="Tree.html#add">add</a></li><li data-type="method" id="Tree-get-nav"><a href="Tree.html#get">get</a></li><li data-type="method" id="Tree-has-nav"><a href="Tree.html#has">has</a></li><li data-type="method" id="Tree-remove-nav"><a href="Tree.html#remove">remove</a></li><li data-type="method" id="Tree-toJSON-nav"><a href="Tree.html#toJSON">toJSON</a></li><li data-type="method" id="Tree-traverse-nav"><a href="Tree.html#traverse">traverse</a></li></ul></li></ul>
   </nav>
 
   <div id="main">
@@ -253,28 +253,6 @@ class Tree
     {
         let node = this.get(path, false);
         return (node != null);
-    }
-
-    /**
-        * Checks a node for existence in a tree. / Проверяет узел на существование в дереве.
-        * 
-        * @param {string} path The path to the node to check. / Путь к узлу для проверки.
-        * @returns {boolean} True if the node exists and false if it does not exist. / Значение true в случае существования узла и false в случае если он не существует.
-        * @this {Tree} Tree. / Дерево.
-        * @example
-        * tree.has('/notExists/child') // false
-        * tree.has('/exists') // true
-    */
-    isUniqueName(name)
-    {
-        let isUnique = true;
-        tree.traverse(node => {
-            if (node.name == name)
-            {
-                isUnique = false;
-            }
-        });
-        return isUnique;
     }
 
     /**
