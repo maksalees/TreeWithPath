@@ -1,0 +1,18 @@
+{
+  "name": "pathtree",
+  "version": "1.0.0",
+  "description": "JavaScript library for working with trees. The main difference from other libraries is that here access to nodes occurs through paths, paths similar to paths in the FS. / Библиотека JavaScript для работы с деревьями. Основное отличие от других библиотек, в том что тут доступ к узлам происходит через пути, пути похожие на пути в ФС.",
+  "main": "pathtree.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tree"
+  ],
+  "author": "maks12345",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheMiksHacker/PathTree.git"
+  }
+}
