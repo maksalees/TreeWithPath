@@ -1,0 +1,26 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": ["treewithpath.js", "package.json", "README.md"]
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "referenceTitle": "TreeWithPath",
+        "disableSort": false,
+        "collapse": true,
+        "resources": {
+            "npm": "https://npmjs.com/package/treewithpath",
+            "GitHub": "https://github.com/maksalees/TreeWithPath"
+        }
+    },
+    "opts": {
+        "destination": "./docs/",
+        "encoding": "utf8",
+        "recurse": true,
+        "template": "./node_modules/braintree-jsdoc-template"
+    }
+}

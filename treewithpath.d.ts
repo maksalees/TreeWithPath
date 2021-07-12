@@ -1,8 +1,16 @@
 /**
+ * A node that is more convenient to store in JSON
+ */
+declare interface NodeJson {
+    name: string;
+    data: any;
+    children: NodeJson[];
+}
+
+/**
  * The class of the TreeWithPath tree
  */
-class Tree
-{
+declare class Tree {
     /**
      * Creates a tree
      *
@@ -12,9 +20,7 @@ class Tree
      * const Tree = require("treewithpath");
      * const tree = new Tree({ text: "Hello, world!", "otherText": "hoI!" });
      */
-    constructor(data) {
-        this._root = new Node("root", data, this);
-    }
+    public constructor(data: any);
 
     /**
      * Root node of this tree
@@ -22,9 +28,7 @@ class Tree
      * @returns {Node} Root node
      * @this {Tree}
      */
-    get root() {
-        return this._root;
-    }
+    public get root(): Node;
 
     /**
      * Adds a node to the tree and returns it
@@ -38,15 +42,7 @@ class Tree
      * @example
      * tree.add("node2", { text: "Hello, world!", "otherText": "hoI!" }, "/node1");
      */
-    add(name, data, path) {
-        if (this.has(Tree.joinPath(path, name))) {
-            throw new TreeError("This node already exists");
-        }
-
-        const node = new Node(name, data, this);
-        this.get(path)._children.push(node);
-        return node;
-    }
+    public add(name: string, data: any, path: string): Node;
 
     /**
      * Gets the node at the specified path
@@ -59,27 +55,8 @@ class Tree
      * @example
      * tree.get("/node1");
      */
-    get(path, error = true) {
-        let current = [this.root];
-        const parsedPath = parsePath(path);
-
-        for (const [ index, node ] of parsedPath.entries()) {
-            const currentNode = current.find(currentNode => currentNode.name === node);
-
-            if (currentNode !== undefined) {
-                current = currentNode._children;
-
-                if (index === parsedPath.length - 1) {
-                    return currentNode;
-                }
-            } else if (error) {
-                throw new TreeError(`${node}: Node not exists`);
-            } else {
-                return null;
-            }
-        }
-    }
-
+    public get(path: string, error: boolean = true): Node | null;
+    
     /**
      * Deletes the node and returns it at the specified path
      *
@@ -90,12 +67,8 @@ class Tree
      * @example
      * tree.remove("/node1");
      */
-    remove(path) {
-        const node = this.get(path);
-        node.remove();
-        return node;
-    }
-
+    public remove(path: string): Node;
+    
     /**
      * Calls a callback for each node in the tree
      *
@@ -106,10 +79,8 @@ class Tree
      *   console.log(node.name);
      * });
      */
-    traverse(callback) {
-        this.root.traverse(callback);
-    }
-
+    public traverse(callback: (node: Node) => void): void;
+    
     /**
      * Returns a tree object suitable for storage in JSON format. This method is mainly used by the JSON.stringify function
      *
@@ -118,10 +89,8 @@ class Tree
      * @example
      * tree.toJSON(); // { name: "root", data: { text: "Hello, world!", "otherText": "hoI!" }, children: [{ name: "node1", data: { text: "Hello, world!", "otherText": "hoI!" }, children: [{ name: "node2", data: {text: "Hello, world!", "otherText": "hoI!" }, children: [] }] }
      */
-    toJSON() {
-        return this.root.toJSON();
-    }
-
+    public toJSON(): NodeJson;
+    
     /**
      * Checks a node for existence in a tree
      * 
@@ -132,10 +101,8 @@ class Tree
      * tree.has("/notExists/child") // false
      * tree.has("/exists") // true
      */
-    has(path) {
-        return this.get(path, false) !== null;
-    }
-
+    public has(path: string): boolean;
+    
     /**
      * Creates a tree from an object that returns the toJSON() method
      *
@@ -144,19 +111,8 @@ class Tree
      * @example
      * const tree = Tree.fromJSON({ name: "root", data: { text: "Hello, world!", "otherText": "hoI!" }, children: [{name: "node1", data: {text: "Hello, world!", "otherText": "hoI!"}, children: [{name: "node2", data: {text: "Hello, world!", "otherText": "hoI!"}, children: [] }] });
      */
-    static fromJSON(json) {
-        const tree = new Tree(json.data);
-
-        function recurse(recurseJson, addTo) {
-            for (const node of recurseJson) {
-                recurse(node.children, addTo.addChild(node.name, node.data));
-            }
-        };
-
-        recurse(json.children, tree.root);
-        return tree;
-    }
-
+    public static fromJSON(json: NodeJson): Tree;
+    
     /**
      * Connects the two specified paths into one.
      *
@@ -166,22 +122,13 @@ class Tree
      * @example
      * Tree.joinPath("/node1", "node2") // /node1/node2
      */
-    static joinPath(firstPath, secondPath) {
-        if (firstPath.endsWith("/") && secondPath.startsWith("/")) {
-            return firstPath.substr(0, firstPath.length - 1) + secondPath;
-        } else if (firstPath.endsWith("/") || secondPath.endsWith("/") || secondPath.startsWith("/")) {
-            return firstPath + secondPath;
-        } else {
-            return `${firstPath}/${secondPath}`;
-        }
-    }
+    public static joinPath(firstPath: string, secondPath: string): string;
 }
 
 /**
  * Node class
  */
-class Node
-{
+declare class Node {
     /**
      * Creates an instance of a node. Do not use this constructor yourself. To add nodes, use the add and addChild methods
      * 
@@ -190,22 +137,17 @@ class Node
      * @param {Tree} tree The tree to which the node will belong
      * @constructor
      */
-    constructor(name, data, tree) {
-        /**
-         * Name of this node
-         */
-        this.name = name;
+    public constructor(name: string, data: any, tree: Tree);
 
-        /**
-         * Data of this node
-         */
-        this.data = data;
+    /**
+     * Name of this node
+     */
+    public name: string;
 
-        /** @private */
-        this._children = [];
-
-        this._tree = tree;
-    }
+    /**
+     * Data of this node
+     */
+    public data: any;
 
     /**
      * The tree to which the node will belong
@@ -213,9 +155,7 @@ class Node
      * @returns {Tree} Tree to which the node will belong
      * @this {Node}
      */
-    get tree() {
-        return this._tree;
-    }
+    public get tree(): Tree;
 
     /**
      * Getter to get the path to this node
@@ -224,25 +164,7 @@ class Node
      * @this {Node} Node
      * @throws {TreeError} In case this node does not belong to any tree
      */
-    get path() {
-        if (this.tree == null) {
-            throw new TreeError("This node does not belong to any tree");
-        }
-
-        const parentsArray = [];
-        function recurse(node) {
-            if (node != null) {
-                parentsArray.push(node);
-                return recurse(node.parent);
-            } else {
-                return parentsArray;
-            }
-        }
-
-        const pathArray = recurse(this);
-        pathArray.pop();
-        return `/${pathArray.map(node => node.name).reverse().join("/")}`;
-    }
+    public get path(): string;
 
     /**
      * Getter to get the parent of this node
@@ -251,29 +173,7 @@ class Node
      * @this {Node} Node
      * @throws {TreeError} In case this node does not belong to any tree
      */
-    get parent() {
-        if (this.tree == null) {
-            throw new TreeError("This node does not belong to any tree");
-        }
-
-        if (this.tree.root._children.includes(this)) {
-            return this.tree.root;
-        }
-        
-        function recurse(children) {
-            const parent = children.find((item) => item._children.includes(this));
-            
-            if (parent != null) {
-                return parent;
-            } else {
-                for (const child of children) {
-                    return recurse.call(this, child._children);
-                }
-            }
-        }
-
-        return recurse.call(this, this.tree.root._children);
-    }
+    public get parent(): Node;
 
     /**
      * A getter that returns an array of children of the given node
@@ -281,9 +181,7 @@ class Node
      * @this {Node} Node
      * @returns {Array} Array of children for this node
      */
-    get children() {
-        return this._children;
-    }
+    public get children(): Node[];
 
     /**
      * Deletes the given node and its children
@@ -292,19 +190,7 @@ class Node
      * @throws {TreeError} In case this node does not belong to any tree
      * @throws {TreeError} If this node is the root
      */
-    remove() {
-        if (this.tree == null) {
-            throw new TreeError("This node does not belong to any tree");
-        }
-
-        if (this.parent == null) {
-            throw new TreeError("Cannot remove root node");
-        } else {
-            this.parent._children.splice(this.parent._children.indexOf(this), 1);
-            this._tree = null;
-            this._children = null;
-        }
-    }
+    public remove(): void;
 
     /**
      * Adds a child to this node
@@ -315,19 +201,7 @@ class Node
      * @throws {TreeError} In case this node does not belong to any tree
      * @throws {TreeError} In case the node already exists
      */
-    addChild(name, data) {
-        if (this.tree == null) {
-            throw new TreeError("This node does not belong to any tree")
-        }
-
-        if (this.tree.has(Tree.joinPath(this.path, name))) {
-            throw new TreeError("This node already exists");
-        }
-
-        const node = new Node(name, data, this.tree);
-        this._children.push(node);
-        return node;
-    }
+    public addChild(name: string, data: any): Node;
 
     /**
      * Returns a node object suitable for storage in JSON format. This method is mainly used by the JSON.stringify function
@@ -337,9 +211,7 @@ class Node
      * @example
      * node.toJSON(); // { name: "root", data: { text: "Hello, world!", "otherText": "hoI!" }, children: [{ name: "node1", data: {text: "Hello, world!", "otherText": "hoI!" }, children: [{ name: "node2", data: { text: "Hello, world!", "otherText": "hoI!" }, children: [] }] }
      */
-    toJSON() {
-        return { name: this.name, data: this.data, children: this._children };
-    }
+    public toJSON(): NodeJson;
 
     /**
      * Calls a callback for each child node of this node
@@ -351,44 +223,5 @@ class Node
      *   console.log(node.name);
      * });
      */
-    traverse(callback) {
-        function recurse(node) {
-            callback(node);
-
-            for (const child of node._children) {
-                recurse(child);
-            }
-        }
-
-        recurse(this);
-    }
+    public traverse(callback: (node: Node) => void): void;
 }
-
-/**
- * It is a TreeWithPath error class.
- * @private
- */
-class TreeError extends Error {
-    constructor(message) {
-        super(message);
-        this.name = "TreeError";
-    }
-}
-
-/** @private */
-function parsePath(path) {
-    if (path.startsWith("/")) {
-        const pathArray = path.split("/");
-        pathArray[0] = "root";
-
-        if (pathArray[pathArray.length - 1] == "") {
-            pathArray.pop();
-        }
-
-        return pathArray;
-    } else {
-        throw new TreeError("Wrong path");
-    }
-}
-
-module.exports = Tree;

@@ -1,18 +1,26 @@
 {
   "name": "treewithpath",
-  "version": "1.0.5",
-  "description": "JavaScript library for working with trees. The main difference from other libraries is that here access to nodes occurs through paths, paths similar to paths in the FS. / Библиотека JavaScript для работы с деревьями. Основное отличие от других библиотек, в том что тут доступ к узлам происходит через пути, пути похожие на пути в ФС.",
+  "version": "2.0.0",
+  "description": "JavaScript library for working with trees. The main difference from other libraries is that here access to nodes occurs through paths, paths similar to paths in the file systems",
   "main": "treewithpath.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha",
+    "generate-docs": "node_modules/.bin/jsdoc --configure jsdoc.json --verbose"
   },
   "keywords": [
     "tree"
   ],
-  "author": "maks12345",
+  "author": "Maxim Leshchenko",
   "license": "MIT",
+  "homepage": "https://maksalees.github.io/TreeWithPath/2.0.0/index.html",
+  "types": "./treewithpath.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheMiksHacker/TreeWithPath.git"
+    "url": "https://github.com/maksalees/TreeWithPath.git"
+  },
+  "devDependencies": {
+    "braintree-jsdoc-template": "^3.3.0",
+    "jsdoc": "^3.6.7",
+    "mocha": "^9.0.2"
   }
 }
