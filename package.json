@@ -5,7 +5,7 @@
   "main": "treewithpath.js",
   "scripts": {
     "test": "node_modules/.bin/mocha",
-    "generate-docs": "node_modules/.bin/jsdoc --configure jsdoc.json --verbose"
+    "generate-docs": "node_modules/.bin/jsdoc --configure jsdoc.json --verbose; mv ./docs/treewithpath/* ./docs; rm -rf ./docs/treewithpath"
   },
   "keywords": [
     "tree"
